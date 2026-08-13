@@ -1,0 +1,21 @@
+name: CI
+
+on: push
+
+jobs:
+  build-and-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build image
+        run: docker build -t lab-app:latest app/
+
+      - name: Scan image with Trivy (FAIL on HIGH/CRITICAL)
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: lab-app:latest
+          severity: HIGH,CRITICAL
+          exit-code: "1"
+          ignore-unfixed: true
