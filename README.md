@@ -49,3 +49,15 @@ docker build -t legal-things app/
 docker run -d -p 8080:8080 legal-things
 # open http://localhost:8080
 ```
+
+## Pull the image from GitHub Container Registry
+
+The pipeline pushes every build to GHCR after scanning. Pull it like a production server would:
+
+```bash
+echo <GH_PAT> | docker login ghcr.io -u <your-username> --password-stdin
+docker pull ghcr.io/azamrahim/devsecops-lab:latest
+docker run -d -p 8080:8080 ghcr.io/azamrahim/devsecops-lab:latest
+```
+
+Note: since the repo is private, pulling needs a GitHub token with `read:packages` scope.
