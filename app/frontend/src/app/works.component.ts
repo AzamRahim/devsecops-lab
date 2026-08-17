@@ -48,6 +48,6 @@ export class WorksComponent {
     { id: '10', title: 'Sundown, Brown County',    category: 'Editorial',        year: '2024', image: 'assets/works/6339054988402823851.jpg' },
     { id: '11', title: 'An Honest Corner',         category: 'Design',           year: '2024', image: 'assets/works/6339054988402823852.jpg' },
     { id: '12', title: 'Notes on Flesh',           category: 'Material study',   year: '2024', image: 'assets/works/6339054988402823853.jpg' },
-    { id: '13', title: 'Marginalia',               category: 'Creative culture', year: '2024', image: 'assets/works/6339054988402823854.jpg' },
+    { id: '13', title: 'Legal Things logo',               category: 'Creative culture', year: '2024', image: 'assets/works/6339054988402823854.jpg' },
   ];
 }
