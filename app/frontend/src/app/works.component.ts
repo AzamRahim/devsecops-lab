@@ -17,7 +17,7 @@ interface Work {
     <section id="works" class="works">
       <div class="section-head reveal">
         <span class="section-head__num">01 / Case files</span>
-        <h2>Selected works</h2>
+        <h2>Our works</h2>
       </div>
 
       <div class="works__grid">
