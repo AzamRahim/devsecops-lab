@@ -183,6 +183,7 @@ a {
 
 .marquee {
   overflow: hidden;
+  background: var(--seal);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   padding: 1.1rem 0;
@@ -200,11 +201,15 @@ a {
   font-family: var(--serif);
   font-size: 1.4rem;
   letter-spacing: 0.14em;
+  color: var(--paper);
+  /* text-transform: uppercase; */
+  font-weight: 500;
 }
 
 .marquee__track i {
-  color: var(--seal);
+  color: var(--paper);
   font-style: normal;
+  opacity: 0.75;
 }
 
 @keyframes scroll {

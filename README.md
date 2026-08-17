@@ -11,11 +11,16 @@ A full web landing page for **Legal Things** — a practice across fashion, desi
 
 ## Run locally (dev)
 
+Prerequisites: Java 17, Node 20+, and a MySQL database on `localhost:3306` (root, empty password) — or adjust `app/backend/src/main/resources/application.properties`.
+
 Terminal 1 (backend):
 
 ```bash
 cd app/backend
-mvn spring-boot:run
+# Using the bundled Maven wrapper (no system Maven required):
+.\mvnw.cmd spring-boot:run
+# Or on macOS/Linux:
+# ./mvnw spring-boot:run
 # API at http://localhost:8080/api/works
 ```
 
@@ -28,7 +33,16 @@ npm start
 # App at http://localhost:4200 (proxies /api to :8080)
 ```
 
-## Run with Docker
+## Run with Docker Compose
+
+This starts both MySQL and the application:
+
+```bash
+docker-compose up --build
+# open http://localhost:8080
+```
+
+## Run with Docker (manual)
 
 ```bash
 docker build -t legal-things app/
