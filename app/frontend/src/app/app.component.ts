@@ -10,6 +10,7 @@ import { WorksComponent } from './works.component';
 export class AppComponent implements AfterViewInit {
   year = new Date().getFullYear();
   menuOpen = false;
+  activeSection = 'works';
 
   ngAfterViewInit(): void {
     const track = document.querySelector('.marquee__track');
@@ -29,6 +30,22 @@ export class AppComponent implements AfterViewInit {
         { threshold: 0.12 }
       );
       revealEls.forEach((el) => observer.observe(el));
+
+      const navIds = ['works', 'manifesto', 'capabilities', 'journal'];
+      const navObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              this.activeSection = entry.target.id;
+            }
+          });
+        },
+        { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+      );
+      navIds.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) navObserver.observe(el);
+      });
     } else {
       revealEls.forEach((el) => el.classList.add('visible'));
     }

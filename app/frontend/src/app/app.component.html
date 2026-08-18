@@ -1,10 +1,10 @@
 <header class="nav" [class.open]="menuOpen">
   <a href="#" class="nav__logo">LEGAL THINGS<sup>®</sup></a>
   <nav class="nav__links">
-    <a href="#works">Works</a>
-    <a href="#manifesto">Manifesto</a>
-    <a href="#capabilities">Capabilities</a>
-    <a href="#journal">Journal</a>
+    <a href="#works" [class.active]="activeSection === 'works'">Works</a>
+    <a href="#manifesto" [class.active]="activeSection === 'manifesto'">Manifesto</a>
+    <a href="#capabilities" [class.active]="activeSection === 'capabilities'">Capabilities</a>
+    <a href="#journal" [class.active]="activeSection === 'journal'">Journal</a>
   </nav>
   <a href="#contact" class="nav__cta">Start a case</a>
   <button class="nav__toggle" aria-label="Menu" (click)="menuOpen = !menuOpen">
@@ -20,10 +20,10 @@
         <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
       </video>
     </div>
-    <p class="hero__kicker reveal">Est. MMXXVI — A practice for the beautiful</p>
+    <p class="hero__kicker reveal">Est. MMXXIV — A Creative Culture</p>
     <h1 class="hero__title reveal">
-      The one and only,<br>
-      <em>legal things</em>.
+      Love every gamble<br>
+      and live, <em>Legal Things</em>.
     </h1>
     <div class="hero__foot reveal">
       <p>Legal Things is a collective of makers, designers and artists working across fashion, design, art and creative culture.</p>
